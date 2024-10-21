@@ -26,8 +26,8 @@ def process_file(file_path):
 
     for i in range(0, len(df)):
         dic_ = {}
-        result = ' '.join(df.iloc[i, 5:].astype(str)).replace('NaN', '').replace("nan", '')
-        dic_.update(dict(df.iloc[i, 0:4]))
+        result = ' '.join(df.iloc[i, 8:].astype(str)).replace('NaN', '').replace("nan", '')
+        dic_.update(dict(df.iloc[i, 0:7]))
         dic_.update(process_str_to_list(result))
         ls.append(dic_)
 

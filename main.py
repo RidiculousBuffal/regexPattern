@@ -2,7 +2,7 @@ import pandas as pd
 import re
 
 
-df = pd.read_excel("报名2.xlsx")
+df = pd.read_excel("报名列表1021.xlsx")
 
 
 def process_str_to_list(input_string):
@@ -30,11 +30,11 @@ ls = []
 for i in range(0, len(df)):
     # 从第5列开始到最后一列合并为字符串 前4列为个人信息
     dic_ = {}
-    result = ' '.join(df.iloc[i, 5:].astype(str)).replace('NaN','').replace("nan",'')
-    dic_.update(dict(df.iloc[i,0:4]))
+    result = ' '.join(df.iloc[i, 8:].astype(str)).replace('NaN','').replace("nan",'')
+    dic_.update(dict(df.iloc[i,0:7]))
     dic_.update(process_str_to_list(result))
     ls.append(dic_)
 
 df_new = pd.DataFrame(ls)
 
-df_new.to_excel("报名2_new.xlsx")
+df_new.to_excel("报名列表1021new.xlsx")
